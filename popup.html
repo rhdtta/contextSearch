@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -23,10 +23,9 @@
       body {
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
-        min-height: 180px;
-        width: 400px;
         margin: 0;
-        padding: 0;
+        padding: 8px 16px 8px 16px;
+        text-align: center;
       }
       h3 {
         font-family: "Menlo", monospace;
@@ -49,6 +48,8 @@
         border-bottom: 0.5px solid #dadada;
       }
       .main-content {
+        display: flex;
+        gap: 8px;
         padding: 0;
       }
       .main-icons {
@@ -87,60 +88,91 @@
         font-size: 40px;
         color: #2f5876;
       }
+      .button {
+        display: inline-block;
+        position: relative;
+        margin: 8px;
+        padding: 0 20px;
+        text-align: center;
+        text-decoration: none;
+        font: bold 12px/25px Arial, sans-serif;
+     
+        text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+     
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;
+     
+        -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+        -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+        box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+     
+        -webkit-transition: all 0.15s ease;
+        -moz-transition: all 0.15s ease;
+        -o-transition: all 0.15s ease;
+        -ms-transition: all 0.15s ease;
+        transition: all 0.15s ease;
+
+        color: #ededed;
+ 
+        background: #70c9e3; /* Old browsers */
+        background: -moz-linear-gradient(top,  #70c9e3 0%, #39a0be 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#70c9e3), color-stop(100%,#39a0be)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #70c9e3 0%,#39a0be 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #70c9e3 0%,#39a0be 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #70c9e3 0%,#39a0be 100%); /* IE10+ */
+        background: linear-gradient(top,  #70c9e3 0%,#39a0be 100%);
+
+        cursor: pointer;
+      }
+      .button-green {
+        color: #3e5706;
+ 
+        background: #a5cd4e; /* Old browsers */
+        background: -moz-linear-gradient(top,  #a5cd4e 0%, #6b8f1a 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a5cd4e), color-stop(100%,#6b8f1a)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%); /* IE10+ */
+        background: linear-gradient(top,  #a5cd4e 0%,#6b8f1a 100%);
+      }
+      .disabled {
+        pointer-events: none;
+        color: #515151;
+ 
+        background: #d3d3d3; /* Old browsers */
+        background: -moz-linear-gradient(top,  #d3d3d3 0%, #8a8a8a 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d3d3d3), color-stop(100%,#8a8a8a)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* IE10+ */
+        background: linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%);
+
+      }
     </style>
   </head>
   <body>
-    <div class="main-header">
-      <h3 class="logo">
-        Context search
-        <span class="version">(1.0.0)</span>
-      </h3>
-    </div>
 
     <div class="main-content">
-      <div class="input1">
-        <label for="word1">Enter Word</label>
-        <input type="text" id="word1">
+      <div>
+        <div class="input1">
+          <label for="word1">Enter Word</label>
+          <input type="text" id="word1">
+        </div>
+        <div class="input2">
+          <label for="word2">Enter Word</label>
+          <input type="text" id="word2">
+        </div>
       </div>
-      <div class="input2">
-        <label for="word2">Enter Word</label>
-        <input type="text" id="word2">
+      <div>
+        <button type="submit" class="contextSearchSubmit button">Submit</button>
+        <div style="display: flex;">
+          <button type="submit" class="contextSearchNext disabled button button-green">Next</button>
+          <button type="submit" class="contextSearchPrev disabled button button-green">Prev</button>
+        </div>
       </div>
-      <button type="submit" class="contextSearchSubmit">Submit</button>
     </div>
-    <!-- <div class="main-icons">
-      <div class="flex-container">
-        <div class="flex">
-          <a href="https://vaidhyanathansm.netlify.app/" target="_blank">
-            <i class="fa fa-globe"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a
-            href="https://www.youtube.com/channel/UCqwT9BQSrMA3ZHcyAHtzqwA"
-            target="_blank"
-          >
-            <i class="fa fa-youtube"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://twitter.com/itssmv1999" target="_blank">
-            <i class="fa fa-twitter"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://www.facebook.com/smv1999/" target="_blank">
-            <i class="fa fa-facebook"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://github.com/smv1999" target="_blank">
-            <i class="fa fa-github"></i>
-          </a>
-        </div>
-      </div>
-    </div> -->
+    
     <script defer src="popup.js"></script>
   </body>
 </html>
-view raw popup.html hosted with ❤ by GitHub

@@ -1,0 +1,9 @@
+::highlight(match1) {
+    background-color: orangered;
+    color: white;
+}
+
+::highlight(match2) {
+    background-color: pink;
+    color: white;
+}

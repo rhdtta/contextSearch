@@ -17,7 +17,11 @@
       {
         "matches": ["<all_urls>"],
         "js": ["jquery.min.js", "content.js"],
-        "run_at": "document_start"
+        "css": ["highlight.css"],
+        "run_at": "document_end"
       }
-    ]
+    ],
+    "background": {
+      "type": "module"
+    }
   }
